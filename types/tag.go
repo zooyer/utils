@@ -18,7 +18,7 @@ func Mapping(value interface{}, tag string) (tags, fields map[string]string) {
 		t = t.Elem()
 	}
 	if t.Kind() != reflect.Struct {
-		return nil, nil
+		panic("value must is struct type")
 	}
 
 	tags = make(map[string]string)
